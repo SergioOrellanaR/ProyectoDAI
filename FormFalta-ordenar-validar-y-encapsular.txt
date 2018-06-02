@@ -1,0 +1,73 @@
+------Registro 1-------
+<form>
+            <label for="txtSampleCode">Código de muestra: </label>
+            <button id="btnValidate">Validar</button>
+            <input type="text" id="txtSampleCode">
+            <br>
+            <label for="slcTipo">Soy: </label>
+            <select id="slcTipo">
+            <option value="slcEmpresa">Empresa</option>
+            <option value="slcPersona">Persona</option>
+            </select>
+            <br>
+            <button id="btnContinue">Continuar</button>
+            <button id="btnBack">Volver</button>
+</form>
+
+
+------Registro Particular---------
+
+        Nombre
+        <input type="text" id="txtName" required>
+        <br>
+        Rut
+        <input type="text" id="txtRut" required>
+        <br>
+        Contraseña
+        <input type="password" id="txtPassword" required>
+        <br>
+        Confirma contraseña
+        <input type="password" id="txtPasswordConfirm" required>
+        <br>
+        Direccion:
+        <input type="text" id="txtAddress">
+        <br>
+        Email:
+        <input type="text" id="txtEmail" required>
+        <br>
+        Teléfono:
+        <input type="text" id="txtPhone">
+        <br>
+        <input ID="btnSend" type="button" value="Enviar"> &nbsp; &nbsp; &nbsp; &nbsp;
+        <input ID="btnBack" type="button" value="Volver">
+
+
+
+-------Registro Empresa-----------
+
+Nombre
+        <input type="text" id="txtName" required>
+        <br>
+        Rut
+        <input type="text" id="txtRut" required>
+        <br>
+        Contraseña
+        <input type="password" id="txtPassword" required>
+        <br>
+        Confirma contraseña
+        <input type="password" id="txtPasswordConfirm" required>
+        <br>
+        <label for="txtRut">Rut: </label>
+        <input type="text" id="txtRut" required>
+        <br>
+        <label for="txtName">Nombre: </label>
+        <input type="text" id="txtName" required>
+        <br>
+        <label for="txtEmail">Email: </label>
+        <input type="text" id="txtEmail" required>
+        <br>
+        <label for="txtPhone">Telefono: </label>
+        <input type="text" id="txtPhone" required>
+        <br>
+        <input ID="btnSend" type="button" value="Enviar"> &nbsp; &nbsp; &nbsp; &nbsp;
+        <input ID="btnBack" type="button" value="Volver">
