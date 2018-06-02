@@ -1,9 +1,5 @@
 ------Registro 1-------
 <form>
-            <label for="txtSampleCode">C�digo de muestra: </label>
-            <button id="btnValidate">Validar</button>
-            <input type="text" id="txtSampleCode">
-            <br>
             <label for="slcTipo">Soy: </label>
             <select id="slcTipo">
             <option value="slcEmpresa">Empresa</option>
@@ -23,10 +19,10 @@
         Rut
         <input type="text" id="txtRut" required>
         <br>
-        Contrase�a
+        Contraseña
         <input type="password" id="txtPassword" required>
         <br>
-        Confirma contrase�a
+        Confirma contraseña
         <input type="password" id="txtPasswordConfirm" required>
         <br>
         Direccion:
@@ -35,7 +31,7 @@
         Email:
         <input type="text" id="txtEmail" required>
         <br>
-        Tel�fono:
+        Teléfono:
         <input type="text" id="txtPhone">
         <br>
         <input ID="btnSend" type="button" value="Enviar"> &nbsp; &nbsp; &nbsp; &nbsp;
@@ -51,11 +47,13 @@ Nombre
         Rut
         <input type="text" id="txtRut" required>
         <br>
-        Contrase�a
+        Contraseña
         <input type="password" id="txtPassword" required>
         <br>
-        Confirma contrase�a
+        Confirma contraseña
         <input type="password" id="txtPasswordConfirm" required>
+        <br>
+        Ingrese los datos de un contacto (Una vez registrado podrá ingresar más si lo desea)
         <br>
         <label for="txtRut">Rut: </label>
         <input type="text" id="txtRut" required>
