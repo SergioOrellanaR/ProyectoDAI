@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,11 +23,7 @@
   </head>
   <body>
     
-        <?php
-            include 'Empresa.php';
-            $empresa = new Empresa(0, '123-0', 'Marco', 'asd123', 'Calle falsa 123');
-        ?>
-    <header role="banner">
+        <header role="banner">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
@@ -39,16 +34,16 @@
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.php">Inicio</a>
+                <a class="nav-link" href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Quienes Somos</a>
               </li>              
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Contacto</a>
+                <a class="nav-link" href="#">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login.html">Iniciar Sesion/Registro</a>
+                <a class="nav-link active" href="login.php">Iniciar Sesion/Registro</a>
               </li>
 
             </ul>
@@ -57,79 +52,72 @@
       </nav>
     </header>
     <!-- END header -->
-    
-    <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('img/slider-2.jpg');">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Nosotros cuidaremos de ti</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            </div>
-          </div>
-        </div>
 
-      </div>
-
-      <div class="slider-item" style="background-image: url('img/slider-1.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Brindamos soluciones de atención médica</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            </div>
-          </div>
+    <div class="jumbotron">
+        <div class="container">  
+          <h1>Registro Particular</h1>
         </div>
-        
-      </div>
-
-    </section>
-    <!-- END slider -->
-
-    
-    <section class="container home-feature mb-5">
-      <div class="row">
-        <div class="col-md-4 p-0 one-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-hospital-bed"></span>
-            <h2>Servicios para pacientes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-        <div class="col-md-4 p-0 two-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-first-aid-kit"></span>
-            <h2>Servicios Medicos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-        <div class="col-md-4 p-0 three-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-hospital"></span>
-            <h2>Comodidades</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <section class="cover_1" style="background-image: url(img/bg_1.jpg);">
-      <div class="container">
-        <div class="row text-center justify-content-center">
-          <div class="col-md-10">
-            <h2 class="heading element-animate">Experimenta nuestras instalaciones avanzadas</h2>
-            <p class="sub-heading element-animate mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            <p class="element-animate"><a href="#" class="btn btn-primary btn-lg">Ver mas</a></p>
+    </div>
+    <section class="section">
+      <div class="container" >
+        <div class="row">
+          <div class="col-md-8 mb-5 element-animate">
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="txtName">Nombre</label>
+                  <input type="text" class="form-control form-control-lg" id="txtName" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtRut">Rut</label>
+                  <input type="text" id="txtRut" class="form-control form-control-lg" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="password">Contraseña</label>
+                  <input type="password" id="password" class="form-control form-control-lg" required>
+                </div>
+              </div>   
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtPasswordConfirm">Confirmar contraseña</label>
+                  <input type="password" id="txtPasswordConfirm" class="form-control form-control-lg" required>
+                </div>
+              </div>                   
+              <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="txtAddress">Direccion:</label>
+                  <input type="text" id="txtAddress" class="form-control form-control-lg" >
+                </div>
+              </div>        
+              <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="txtEmail">Email</label>
+                  <input type="email" id="txtEmail" class="form-control form-control-lg" required>
+                </div>
+              </div>  
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtPhone">Teléfono</label>
+                  <input type="text" id="txtPhone" class="form-control form-control-lg" >
+                </div>
+              </div>                  
+              <div class="row">
+                <div class="col-md-4 form-group">
+                  <input type="button" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                </div>
+                <div class="col-md-4 form-group">
+                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">
+                </div>                  
+              </div>
+            </form>                  
           </div>
         </div>
       </div>
     </section>
-    <!-- END section -->
 
     <footer class="site-footer" role="contentinfo">
       <div class="container">
@@ -180,7 +168,6 @@
             <hr class="border-t">
           </div>
           <div class="col-md-6 col-sm-12 copyright">
-            <p></p>
           </div>
           <div class="col-md-6 col-sm-12 text-md-right text-sm-left">
             <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
@@ -227,18 +214,18 @@
                   </div>
                 </div>
               </div>
-              
 
               <div class="form-group">
                 <label for="appointment_message" class="text-black">Message</label>
-                <textarea name="txtArea" id="appointment_message" class="form-control" cols="30" rows="10"></textarea>
+                <textarea name="a" id="appointment_message" class="form-control" cols="30" rows="10"></textarea>
               </div>
               <div class="form-group">
                 <input type="submit" value="Send Message" class="btn btn-primary">
               </div>
             </form>
           </div>
-          
+            
+
         </div>
       </div>
     </div>

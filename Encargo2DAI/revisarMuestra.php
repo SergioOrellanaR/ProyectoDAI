@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,11 +23,7 @@
   </head>
   <body>
     
-        <?php
-            include 'Empresa.php';
-            $empresa = new Empresa(0, '123-0', 'Marco', 'asd123', 'Calle falsa 123');
-        ?>
-    <header role="banner">
+        <header role="banner">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
           <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
@@ -39,16 +34,25 @@
           <div class="collapse navbar-collapse" id="navbarsExample05">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" href="index.php">Inicio</a>
+                <a class="nav-link " href="index.php">Inicio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="index.php">Quienes Somos</a>
               </li>              
               <li class="nav-item">
-                <a class="nav-link" href="index.php">Contacto</a>
+                <a class="nav-link" href="#">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login.html">Iniciar Sesion/Registro</a>
+                <a class="nav-link" href="verInformacion.php">Ver Información</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="registrarMuestra.php">Registar Muestra</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="revisarMuestra.php">Revisar Muestra</a>
+              </li>              
+              <li class="nav-item">
+                <a class="nav-link" href="login.php">Iniciar Sesion/Registro</a>
               </li>
 
             </ul>
@@ -58,79 +62,61 @@
     </header>
     <!-- END header -->
     
-    <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('img/slider-2.jpg');">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Nosotros cuidaremos de ti</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            </div>
+    <div class="jumbotron">
+        <div class="container">  
+          <h1>Registro de Muestra</h1>
+        </div>
+    </div>
+
+    <section class="section">
+      <div class="container" >
+        <div class="row">
+          <div class="col-md-8 mb-5 element-animate">
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtID">ID Muestra</label>
+                  <input type="text" class="form-control form-control-lg" id="txtID" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="slcTipo">Tipo de Análisis</label>
+                <select id="slcTipo" class="form-control form-control-lg">
+                    <option value="slcMicotoxinas">Detección de micotoxinas</option>
+                    <option value="slcBacterias">Detección de bacterias nocivas</option>
+                </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtPPM">PPM</label>
+                  <input type="text" id="txtPPM" class="form-control form-control-lg" required>
+                </div>
+              </div> 
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="slcEstado">Estado</label>
+                <select id="slcTipo" class="form-control form-control-lg">
+                    <option value="slc1">Estado1</option>
+                    <option value="slc2">Estado2</option>
+                </select>
+                </div>
+              </div>                
+              <div class="row">
+                <div class="col-md-3 form-group">
+                  <input type="button" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                </div>
+                <div class="col-md-3 form-group">
+                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">
+                </div>                  
+              </div>                
+            </form>                  
           </div>
         </div>
-
       </div>
-
-      <div class="slider-item" style="background-image: url('img/slider-1.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Brindamos soluciones de atención médica</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
     </section>
-    <!-- END slider -->
-
     
-    <section class="container home-feature mb-5">
-      <div class="row">
-        <div class="col-md-4 p-0 one-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-hospital-bed"></span>
-            <h2>Servicios para pacientes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-        <div class="col-md-4 p-0 two-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-first-aid-kit"></span>
-            <h2>Servicios Medicos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-        <div class="col-md-4 p-0 three-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-hospital"></span>
-            <h2>Comodidades</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <section class="cover_1" style="background-image: url(img/bg_1.jpg);">
-      <div class="container">
-        <div class="row text-center justify-content-center">
-          <div class="col-md-10">
-            <h2 class="heading element-animate">Experimenta nuestras instalaciones avanzadas</h2>
-            <p class="sub-heading element-animate mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            <p class="element-animate"><a href="#" class="btn btn-primary btn-lg">Ver mas</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="row mb-5 element-animate">
