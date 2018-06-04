@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,119 +26,80 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    
-        <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.php">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Quienes Somos</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="verInformacion.php">Ver Información</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="registrarMuestra.php">Registar Muestra</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="revisarMuestra.php">Revisar Muestra</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="login.php">Iniciar Sesion/Registro</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+      
+    <header role="banner">
+      <?php include 'barraNavegacion.php' ?>
     </header>
     <!-- END header -->
     
-    <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('img/slider-2.jpg');">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Nosotros cuidaremos de ti</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            </div>
+    <div class="jumbotron">
+        <div class="container">  
+          <h1>Registro de Muestra</h1>
+        </div>
+    </div>
+
+    <section class="section">
+      <div class="container" >
+        <div class="row">
+          <div class="col-md-8 mb-5 element-animate">
+            <form action="controlador/registrarMuestra.php" method="post">
+              <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="slcTipo">Emisor de la muestra:</label>
+                <select id="slcTipo" class="form-control form-control-lg" name="tipoIngreso">
+                    <option value="empresa">Empresa</option>
+                    <option value="particular">Particular</option>
+                </select>
+                </div>
+              </div> 
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtRUT">Rut del empleado receptor</label>
+                  <input type="text" name="rutReceptor" class="form-control form-control-lg" id="txtRUT" value="<?php echo $_SESSION["empleado_sesion_rut"] ?>" readonly required>
+                </div>
+              </div>                 
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtCodigo">Codigo Particular/Empresa</label>
+                  <input type="text" class="form-control form-control-lg" id="txtCodigo" name="codigoEmisor" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtTemperatura">Temperatura</label>
+                  <input type="text" id="txtTemperatura" class="form-control form-control-lg" name="temperatura" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtCantidad">Cantidad</label>
+                  <input type="text" id="txtCantidad" class="form-control form-control-lg" name="cantidad" required>
+                </div>
+              </div>     
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="slcTipo">Tipo Examen</label>
+                <select id="slcTipo" class="form-control form-control-lg" name="tipo">
+                    <option value="0">Detección de micotoxinas</option>
+                    <option value="1">Detección de bacterias nocivas</option>
+                </select>
+                </div>
+              </div>
+                
+              <div class="row">
+                <div class="col-md-3 form-group">
+                  <input type="submit" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                </div>
+                <div class="col-md-3 form-group">
+                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">
+                </div>                  
+              </div>                
+            </form>                  
           </div>
         </div>
-
       </div>
-
-      <div class="slider-item" style="background-image: url('img/slider-1.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center">
-            <div class="col-md-7 col-sm-12 element-animate">
-              <h1>Brindamos soluciones de atención médica</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
     </section>
-    <!-- END slider -->
-
     
-    <section class="container home-feature mb-5">
-      <div class="row">
-        <div class="col-md-4 p-0 one-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-hospital-bed"></span>
-            <h2>Servicios para pacientes</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-        <div class="col-md-4 p-0 two-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-first-aid-kit"></span>
-            <h2>Servicios Medicos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-        <div class="col-md-4 p-0 three-col element-animate">
-          <div class="col-inner p-xl-5 p-lg-5 p-md-4 p-sm-4 p-4">
-            <span class="icon flaticon-hospital"></span>
-            <h2>Comodidades</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-          </div>
-          <a href="#" class="btn-more">Read More</a>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-    <section class="cover_1" style="background-image: url(img/bg_1.jpg);">
-      <div class="container">
-        <div class="row text-center justify-content-center">
-          <div class="col-md-10">
-            <h2 class="heading element-animate">Experimenta nuestras instalaciones avanzadas</h2>
-            <p class="sub-heading element-animate mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-            <p class="element-animate"><a href="#" class="btn btn-primary btn-lg">Ver mas</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
     <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="row mb-5 element-animate">

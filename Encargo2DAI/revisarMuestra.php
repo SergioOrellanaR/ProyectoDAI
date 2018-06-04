@@ -1,3 +1,21 @@
+<?php
+include_once 'modelo/ResultadoAnalisis.php';
+session_start();
+
+$resultado_analisis = new ResultadoAnalisis(0, $_GET["idMuestra"], '', 0, 0, '');
+$cantidad_muestras = $resultado_analisis->existeResultado();
+echo $cantidad_muestras;
+if($cantidad_muestras > 0){
+    header("location: muestraRevisada.php?idMuestra=".$_GET["idMuestra"]);
+}else{
+    if($_SESSION["tipo_sesion"] == "particular" || $_SESSION["tipo_sesion"] == "empresa" ){
+        header("location: muestraNoRevisada.php"); //Se envía a muestra revisada sin variables, notificar inexistencia de examen.
+    }
+}
+
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,48 +41,14 @@
   </head>
   <body>
     
-        <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link " href="index.php">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Quienes Somos</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="verInformacion.php">Ver Información</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="registrarMuestra.php">Registar Muestra</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="revisarMuestra.php">Revisar Muestra</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="login.php">Iniciar Sesion/Registro</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <header role="banner">
+      <?php include 'barraNavegacion.php' ?>
     </header>
     <!-- END header -->
     
     <div class="jumbotron">
         <div class="container">  
-          <h1>Registro de Muestra</h1>
+          <h1>Revisión de muestras</h1>
         </div>
     </div>
 
@@ -72,40 +56,46 @@
       <div class="container" >
         <div class="row">
           <div class="col-md-8 mb-5 element-animate">
-            <form action="#" method="post">
+            <form action="controlador/registrarResultado.php" method="post">
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtID">ID Muestra</label>
-                  <input type="text" class="form-control form-control-lg" id="txtID" required>
+                  <input type="text" name="idMuestra" class="form-control form-control-lg" id="txtID" value="<?php echo $_GET["idMuestra"] ?>" readonly required>
                 </div>
               </div>
               <div class="row">
+                <div class="col-md-5 form-group">
+                  <label for="txtRUT">Rut del empleado analista</label>
+                  <input type="text" name="rutAnalista" class="form-control form-control-lg" id="txtRUT" value="<?php echo $_SESSION["empleado_sesion_rut"] ?>" readonly required>
+                </div>
+              </div>                
+              <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="slcTipo">Tipo de Análisis</label>
-                <select id="slcTipo" class="form-control form-control-lg">
-                    <option value="slcMicotoxinas">Detección de micotoxinas</option>
-                    <option value="slcBacterias">Detección de bacterias nocivas</option>
+                <select id="slcTipo" name="tipoAnalisis" class="form-control form-control-lg">
+                    <option value="0">Detección de micotoxinas</option>
+                    <option value="1">Detección de bacterias nocivas</option>
                 </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtPPM">PPM</label>
-                  <input type="text" id="txtPPM" class="form-control form-control-lg" required>
+                  <input type="text" id="txtPPM" name="ppm" class="form-control form-control-lg" required>
                 </div>
               </div> 
               <div class="row">
                 <div class="col-md-6 form-group">
                   <label for="slcEstado">Estado</label>
-                <select id="slcTipo" class="form-control form-control-lg">
-                    <option value="slc1">Estado1</option>
-                    <option value="slc2">Estado2</option>
+                <select id="slcTipo" name="estado" class="form-control form-control-lg">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
                 </select>
                 </div>
               </div>                
               <div class="row">
                 <div class="col-md-3 form-group">
-                  <input type="button" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                  <input type="submit" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
                 </div>
                 <div class="col-md-3 form-group">
                   <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,33 +27,8 @@
   </head>
   <body>
     
-        <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Quienes Somos</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="login.php">Iniciar Sesion/Registro</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <header role="banner">
+      <?php include 'barraNavegacion.php' ?>
     </header>
     <!-- END header -->
 
@@ -62,23 +41,23 @@
       <div class="container" >
         <div class="row">
           <div class="col-md-8 mb-5 element-animate">
-            <form action="#" method="post">
+            <form action="controlador/registrarParticular.php" method="post">
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="txtName">Nombre</label>
-                  <input type="text" class="form-control form-control-lg" id="txtName" required>
+                  <input name="nombreParticular" type="text" class="form-control form-control-lg" id="txtName" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtRut">Rut</label>
-                  <input type="text" id="txtRut" class="form-control form-control-lg" required>
+                  <input name="rutParticular" type="text" id="txtRut" class="form-control form-control-lg" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="password">Contraseña</label>
-                  <input type="password" id="password" class="form-control form-control-lg" required>
+                  <input name="claveParticular" type="password" id="password" class="form-control form-control-lg" required>
                 </div>
               </div>   
               <div class="row">
@@ -90,24 +69,24 @@
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="txtAddress">Direccion:</label>
-                  <input type="text" id="txtAddress" class="form-control form-control-lg" >
+                  <input name="direccionParticular" type="text" id="txtAddress" class="form-control form-control-lg" >
                 </div>
               </div>        
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="txtEmail">Email</label>
-                  <input type="email" id="txtEmail" class="form-control form-control-lg" required>
+                  <input name="emailParticular" type="email" id="txtEmail" class="form-control form-control-lg" required>
                 </div>
               </div>  
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtPhone">Teléfono</label>
-                  <input type="text" id="txtPhone" class="form-control form-control-lg" >
+                  <input name="telefonoParticular" type="text" id="txtPhone" class="form-control form-control-lg" >
                 </div>
               </div>                  
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="button" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                  <input type="submit" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
                 </div>
                 <div class="col-md-4 form-group">
                   <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">

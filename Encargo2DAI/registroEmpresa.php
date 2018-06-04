@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,33 +27,8 @@
   </head>
   <body>
     
-        <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Quienes Somos</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="login.php">Iniciar Sesion/Registro</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <header role="banner">
+      <?php include 'barraNavegacion.php' ?>
     </header>
     <!-- END header -->
 
@@ -63,23 +42,23 @@
       <div class="container" >
         <div class="row">
           <div class="col-md-8 mb-5 element-animate">
-            <form action="#" method="post">
+              <form action="controlador/registrarEmpresa.php" method="post">
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="txtName">Nombre</label>
-                  <input type="text" class="form-control form-control-lg" id="txtName" required>
+                  <input type="text" class="form-control form-control-lg" id="txtName" name="nombreEmpresa" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtRut">Rut</label>
-                  <input type="text" id="txtRut" class="form-control form-control-lg" required>
+                  <input type="text" id="txtRut" name="rutEmpresa" class="form-control form-control-lg" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="password">Contraseña</label>
-                  <input type="password" id="password" class="form-control form-control-lg"required>
+                  <input type="password" id="password" name="claveEmpresa" class="form-control form-control-lg" required>
                 </div>
               </div>   
               <div class="row">
@@ -87,37 +66,43 @@
                   <label for="txtPasswordConfirm">Confirmar contraseña</label>
                   <input type="password" id="txtPasswordConfirm" class="form-control form-control-lg"required>
                 </div>
-              </div>                        
+              </div>   
+              <div class="row">
+                <div class="col-md-8 form-group">
+                  <label for="txtDireccion">Dirección</label>
+                  <input type="text" id="txtDireccion" name="direccionEmpresa" class="form-control form-control-lg"required>
+                </div>
+              </div>                 
                 <br>
                     Ingrese los datos de un contacto (Una vez registrado podrá ingresar más si lo desea)
                     <br><br>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtRut1">Rut</label>
-                  <input type="text" id="txtRut1" class="form-control form-control-lg" required>
+                  <input type="text" id="txtRut1" name="rutContacto" class="form-control form-control-lg" required>
                 </div>
               </div>
               <div class="row">
               <div class="col-md-8 form-group">
                   <label for="txtName1">Nombre</label>
-                  <input type="text" class="form-control form-control-lg" id="txtName1" required>
+                  <input type="text" id="txtName1" name="nombreContacto" class="form-control form-control-lg" required>
                 </div>
               </div>      
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="txtEmail">Email</label>
-                  <input type="email" id="txtEmail" class="form-control form-control-lg" required>
+                  <input type="email" id="txtEmail" name="emailContacto" class="form-control form-control-lg" required>
                 </div>
               </div>  
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtPhone">Teléfono</label>
-                  <input type="text" id="txtPhone" class="form-control form-control-lg" >
+                  <input type="text" id="txtPhone" name="telefonoContacto" class="form-control form-control-lg" >
                 </div>
               </div>                  
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="button" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                  <input type="submit" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
                 </div>
                 <div class="col-md-4 form-group">
                   <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">

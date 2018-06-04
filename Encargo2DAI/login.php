@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,33 +27,8 @@
   </head>
   <body>
     
-        <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Medi<span>+</span>  </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php">Quienes Somos</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="contact.php">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="login.php">Iniciar Sesion/Registro</a>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <header role="banner">
+      <?php include 'barraNavegacion.php' ?>
     </header>
     <!-- END header -->
     
@@ -75,26 +54,32 @@
       <div class="container" >
         <div class="row">
           <div class="col-md-6 mb-5 element-animate">
-            <form action="#" method="post">
+            <form action="controlador/validarLogin.php" method="post">
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="slcTipo">Soy: </label>
-                <select id="slcTipo" class="form-control form-control-lg">
-                    <option value="slcEmpresa">Empresa</option>
-                    <option value="slcPersona">Persona</option>
+                <select id="slcTipo" name="tipoLogin" class="form-control form-control-lg">
+                    <option value="empresa">Empresa</option>
+                    <option value="particular">Particular</option>
+                    <option value="empleado">Empleado</option>
                 </select>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-8 form-group">
-                  <label for="username">Username</label>
-                  <input type="text" class="form-control form-control-lg" id="username">
+                  <label for="username">RUT</label>
+                  <input type="text" class="form-control form-control-lg" id="username" name="usuario">
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-8 form-group">
-                  <label for="password">Password</label>
-                  <input type="password" id="password" class="form-control form-control-lg">
+                  <label for="password">Contraseña</label>
+                  <input type="password" id="password" name="clave" class="form-control form-control-lg">
+                  <?php
+                  if(isset($_GET["validado"])){
+                      echo "<b>Las credenciales de acceso ingresadas no son válidas.</b>";
+                  }
+                  ?>
                 </div>
               </div>
               <div class="row">
@@ -107,10 +92,10 @@
               </div>              
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="submit" value="Continuar" class="btn btn-primary btn-lg btn-block">
+                  <input type="submit" value="Ingresar" class="btn btn-primary btn-lg btn-block">
                 </div>
                 <div class="col-md-4 form-group">
-                  <input type="submit" value="Volver" class="btn btn-primary btn-lg btn-block">
+                  <input type="reset" value="Volver" class="btn btn-primary btn-lg btn-block">
                 </div>                  
               </div>
             </form>                  
