@@ -63,7 +63,7 @@ if($_SESSION["tipo_sesion"] == "empleado"){
             echo "<td>". $elemento->rut_empleado_recibe ."</td>";
             echo "<td><a href='revisarMuestra.php?idMuestra=". $elemento->id ."'>Revisar</a></td>";
             echo "</tr>";
-        echo "</table>";
-        }    
+        } 
+        echo "</table>";        
     }
 ?>

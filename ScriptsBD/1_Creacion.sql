@@ -65,3 +65,4 @@ CREATE TABLE resultado_analisis(
     estado 					BIT,
     rut_empleado_analista   VARCHAR(10) REFERENCES empleado(rut) 
 );
+

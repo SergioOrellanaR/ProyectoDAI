@@ -74,7 +74,7 @@ class Particular {
     public function obtenerParticularPorRut(){
         $conexion = new Conexion();
         $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
-        $sql = "SELECT id, rut, password, nombre, direccion, email FROM particular WHERE rut = ". $this->rut;
+        $sql = "SELECT id, rut, password, nombre, direccion, email FROM particular WHERE rut = '". $this->rut."'";
         $resultado = $con->query($sql);
         if ($resultado->num_rows > 0) {
             while($row = $resultado->fetch_array()) {

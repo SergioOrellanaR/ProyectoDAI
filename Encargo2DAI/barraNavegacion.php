@@ -20,10 +20,11 @@
                 if(isset($_SESSION["tipo_sesion"])){
                     switch($_SESSION["tipo_sesion"]){
                         case "particular":
-                            echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php?idParticular=". $_SESSION["particular_sesion_id"] ."'>Ver muestras</a></li>";
+                            echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php?idParticular=". $_SESSION["particular_sesion_id"] ."'>Ver mis muestras</a></li>";
                             break;
                         case "empresa":
-                            echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php?idEmpresa=". $_SESSION["empresa_sesion_id"] ."'>Ver muestras</a></li>";
+                            echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php?idEmpresa=". $_SESSION["empresa_sesion_id"] ."'>Ver mis muestras</a></li>";
+                            echo "<li class='nav-item'><a class='nav-link' href='contactosEmpresa.php'>Mis contactos</a></li>";
                             break;
                         case "empleado":
                             echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php'>Manejo de muestras</a></li>";

@@ -13,8 +13,8 @@
             if($empresa->validarSesion() == 1){
                 echo "Sesión validada";
                 $empresa->obtenerEmpresaPorRut();
+                $_SESSION["tipo_sesion"] = "empresa";        
                 $_SESSION["empresa_sesion_id"] = $empresa->id;
-                $_SESSION["tipo_sesion"] = "empresa";                
                 header("Location: ../index.php");
             }else{
                 header("Location: ../login.php?validado=0");
