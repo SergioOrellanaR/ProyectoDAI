@@ -4,8 +4,10 @@ TO DO:
 4.- Eliminación de Imagen en header de Login. //C
 5.- Amononar ingreso de contactos asociados a Empresa. //B
 11.- Front RegistroExitoso // B
-14.- Arreglar botones de "Volver" para que cumplan su función //S
 
 Optional To Do:
 1.- Redirección de páginas de footer.
 2.- Cambiar textos de español a Latin.
+
+
+

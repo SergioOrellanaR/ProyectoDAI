@@ -95,7 +95,7 @@ session_start();
                   <input type="submit" value="Ingresar" class="btn btn-primary btn-lg btn-block">
                 </div>
                 <div class="col-md-4 form-group">
-                  <input type="reset" value="Volver" class="btn btn-primary btn-lg btn-block">
+                  <input type="reset" value="Volver" class="btn btn-primary btn-lg btn-block" onclick="location.href = 'index.php'">
                 </div>                  
               </div>
             </form>                  

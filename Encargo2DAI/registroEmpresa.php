@@ -105,7 +105,7 @@ session_start();
                   <input type="button" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block" onclick="validaInformacionEmpresa()">
                 </div>
                 <div class="col-md-4 form-group">
-                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">
+                    <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block" onclick="location.href = 'login.php'">
                 </div>                  
               </div>
             </form>                  
@@ -224,6 +224,7 @@ session_start();
         </div>
       </div>
     </div>
+    <script src="js/funcionesRetroceso.js" type="text/javascript"></script>
     <script src="js/validators.js" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>

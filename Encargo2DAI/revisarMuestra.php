@@ -98,7 +98,7 @@ if($cantidad_muestras > 0){
                   <input type="submit" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
                 </div>
                 <div class="col-md-3 form-group">
-                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">
+                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block" onclick="location.href = 'index.php'">
                 </div>                  
               </div>                
             </form>                  
