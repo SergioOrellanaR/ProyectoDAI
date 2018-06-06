@@ -41,7 +41,7 @@ session_start();
       <div class="container" >
         <div class="row">
           <div class="col-md-6 mb-5 element-animate">
-            <form action="#" method="post">
+              <form id="frmRegistro" action="#" method="post">
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="slcTipo">Soy: </label>
@@ -53,7 +53,7 @@ session_start();
               </div>                           
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="submit" value="Continuar" class="btn btn-primary btn-lg btn-block">
+                    <input type="submit" value="Continuar" class="btn btn-primary btn-lg btn-block" onclick="ChangeRedirectPage()">
                 </div>
                 <div class="col-md-4 form-group">
                   <input type="submit" value="Volver" class="btn btn-primary btn-lg btn-block">
@@ -176,7 +176,7 @@ session_start();
         </div>
       </div>
     </div>
-
+    <script src="js/selectorRegistro.js" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

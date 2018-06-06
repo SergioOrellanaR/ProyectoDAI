@@ -6,7 +6,6 @@ TO DO:
 6.- Front Ver manejadorMuestras // B
 7.- Front muestraRevisada // B
 8.- Front manejadorMuestras // B
-9.- Manejador de redirecciones según si soy Empresa o si soy Particular al momento de realizar Registro. //S
 10.- Validar confirmación de contraseña. //S
 11.- Front RegistroExitoso // B
 12.- IngresoDeContacto estar asociado solo a vista de Empresa y no a los otros perfiles //B
