@@ -3,15 +3,9 @@ TO DO:
 3.- Front Contacto. //B
 4.- Eliminación de Imagen en header de Login. //C
 5.- Amononar ingreso de contactos asociados a Empresa. //B
-6.- Front Ver manejadorMuestras // B
-7.- Front muestraRevisada // B
-8.- Front manejadorMuestras // B
-10.- Validar confirmación de contraseña. //S
 11.- Front RegistroExitoso // B
-12.- IngresoDeContacto estar asociado solo a vista de Empresa y no a los otros perfiles //B
-13.- Cambiar valores de Combobox en revisarMuestra
+14.- Arreglar botones de "Volver" para que cumplan su función //S
 
 Optional To Do:
 1.- Redirección de páginas de footer.
 2.- Cambiar textos de español a Latin.
-3.- Validación de Rut.
