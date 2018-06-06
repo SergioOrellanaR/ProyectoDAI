@@ -9,5 +9,6 @@
     $rut_empleado_analista  = $_POST["rutAnalista"];
     $resultadoAnalisis = new ResultadoAnalisis($tipo_analisis, $id_analisis_muestra, $fecha_registro, $ppm, $estado, $rut_empleado_analista);
     $resultadoAnalisis->ingresarAnalisis();
+    header("location: ../resultadoRegistrado.php");
 ?>
 
