@@ -42,7 +42,7 @@ session_start();
       <div class="container" >
         <div class="row">
           <div class="col-md-8 mb-5 element-animate">
-              <form action="controlador/registrarEmpresa.php" method="post">
+              <form id="frmAvanzarRegistro" method="post">
               <div class="row">
                 <div class="col-md-8 form-group">
                   <label for="txtName">Nombre</label>
@@ -52,19 +52,19 @@ session_start();
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtRut">Rut</label>
-                  <input type="text" id="txtRut" name="rutEmpresa" class="form-control form-control-lg" required>
+                  <input id="Rut" type="text" id="txtRut" name="rutEmpresa" class="form-control form-control-lg" required>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="password">Contraseña</label>
-                  <input type="password" id="password" name="claveEmpresa" class="form-control form-control-lg" required>
+                  <input id="pass1" type="password" id="password" name="claveEmpresa" class="form-control form-control-lg" required>
                 </div>
               </div>   
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtPasswordConfirm">Confirmar contraseña</label>
-                  <input type="password" id="txtPasswordConfirm" class="form-control form-control-lg"required>
+                  <input id="pass2" type="password" id="txtPasswordConfirm" class="form-control form-control-lg"required>
                 </div>
               </div>   
               <div class="row">
@@ -79,7 +79,7 @@ session_start();
               <div class="row">
                 <div class="col-md-5 form-group">
                   <label for="txtRut1">Rut</label>
-                  <input type="text" id="txtRut1" name="rutContacto" class="form-control form-control-lg" required>
+                  <input id="RutContacto" type="text" id="txtRut1" name="rutContacto" class="form-control form-control-lg" required>
                 </div>
               </div>
               <div class="row">
@@ -102,7 +102,7 @@ session_start();
               </div>                  
               <div class="row">
                 <div class="col-md-4 form-group">
-                  <input type="submit" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
+                  <input type="button" value="Enviar" ID="btnSend" class="btn btn-primary btn-lg btn-block" onclick="validaInformacionEmpresa()">
                 </div>
                 <div class="col-md-4 form-group">
                   <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block">
@@ -224,7 +224,7 @@ session_start();
         </div>
       </div>
     </div>
-
+    <script src="js/validators.js" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
