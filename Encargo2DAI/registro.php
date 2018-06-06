@@ -176,7 +176,6 @@ session_start();
         </div>
       </div>
     </div>
-    <script src="js/funcionesRetroceso.js" type="text/javascript"></script>
     <script src="js/selectorRegistro.js" type="text/javascript"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
