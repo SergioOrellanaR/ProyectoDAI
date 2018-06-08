@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,70 +25,17 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-      
+    
     <header role="banner">
       <?php include 'barraNavegacion.php' ?>
     </header>
     <!-- END header -->
     
-    <div class="jumbotron">
-        <div class="container">  
-          <h1>Registro de Muestra</h1>
-        </div>
-    </div>
+    <a href="manejadorMuestras.php" class="cta-link element-animate" data-animate-effect="fadeIn" data-target="#modalAppointment">
+      <span class="sub-heading">El resultado a sido registrado</span> 
+      <span class="sub-heading">Haga click acá para volver al manejador</span>             
+    </a>
 
-    <section class="section">
-      <div class="container" >
-        <div class="row">
-          <div class="col-md-8 mb-5 element-animate">
-            <form action="controlador/registrarMuestra.php" method="post">
-              <div class="row">
-                <div class="col-md-8 form-group">
-                  <label for="slcTipo">Emisor de la muestra:</label>
-                <select id="slcTipo" class="form-control form-control-lg" name="tipoIngreso">
-                    <option value="empresa">Empresa</option>
-                    <option value="particular">Particular</option>
-                </select>
-                </div>
-              </div> 
-              <div class="row">
-                <div class="col-md-5 form-group">
-                  <label for="txtRUT">Rut del empleado receptor</label>
-                  <input type="text" name="rutReceptor" class="form-control form-control-lg" id="txtRUT" value="<?php echo $_SESSION["empleado_sesion_rut"] ?>" readonly required>
-                </div>
-              </div>                 
-              <div class="row">
-                <div class="col-md-5 form-group">
-                  <label for="txtCodigo">Codigo Particular/Empresa</label>
-                  <input type="text" class="form-control form-control-lg" id="txtCodigo" name="codigoEmisor" required>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-5 form-group">
-                  <label for="txtTemperatura">Temperatura</label>
-                  <input type="text" id="txtTemperatura" class="form-control form-control-lg" name="temperatura" required>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-5 form-group">
-                  <label for="txtCantidad">Cantidad</label>
-                  <input type="text" id="txtCantidad" class="form-control form-control-lg" name="cantidad" required>
-                </div>
-              </div>     
-                
-              <div class="row">
-                <div class="col-md-3 form-group">
-                  <input type="submit" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">
-                </div>
-                <div class="col-md-3 form-group">
-                  <input type="button" value="Volver" ID="btnBack" class="btn btn-primary btn-lg btn-block" onclick="location.href = 'index.php'">
-                </div>                  
-              </div>                
-            </form>                  
-          </div>
-        </div>
-      </div>
-    </section>
     
     <footer class="site-footer" role="contentinfo">
       <div class="container">
