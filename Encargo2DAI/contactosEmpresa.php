@@ -70,7 +70,7 @@
                   <form action="controlador/registrarContacto.php" method="post">                  
                   <div class="row">
                     <div class="col-md-5 form-group">
-                      <label >Rut empresa:</label>
+                      <label >Rut:</label>
                       <input type="text" class="form-control form-control-lg" name="rutContacto" required>
                     </div>
                   </div>

@@ -55,7 +55,7 @@ include_once 'modelo/Muestra.php';
                 echo "ID: <input type='text' name='idEmpresa'><input type='submit' value='buscar'>";
                 echo "</form>";
                 echo "<hr>";
-                echo "Buscar muestras por empresa:";
+                echo "Buscar muestras por particular:";
                 echo "<form action='manejadorMuestras.php' method='get'>";
                 echo "ID: <input type='text' name='idParticular'><input type='submit' value='buscar' >";
                 echo "</form>";    
