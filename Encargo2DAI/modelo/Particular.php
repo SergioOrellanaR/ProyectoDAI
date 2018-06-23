@@ -36,7 +36,7 @@ class Particular {
         echo "Número de coincidencias encontradas: ".$contador;
         return $contador;
     }
-    
+
     public function ingresarParticularSinID(){
         $conexion = new Conexion;
         $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
