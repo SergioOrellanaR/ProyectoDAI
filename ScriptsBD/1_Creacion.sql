@@ -6,7 +6,8 @@ CREATE TABLE empresa(
     rut       VARCHAR(10),
     nombre    VARCHAR(30),
     password  VARCHAR(10),
-    direccion VARCHAR(50)
+    direccion VARCHAR(50),
+	estado    BIT -- 0: Cuenta desactivada / 1: Cuenta activada
 );
 
 CREATE TABLE particular(
@@ -15,14 +16,16 @@ CREATE TABLE particular(
     password  VARCHAR(45),
     nombre	  VARCHAR(45),
     direccion VARCHAR(45),
-    email     VARCHAR(100)
+    email     VARCHAR(100),
+	estado    BIT -- 0: Cuenta desactivada / 1: Cuenta activada
 );
 
 CREATE TABLE empleado(
 	rut       VARCHAR(10) PRIMARY KEY,
     nombre    VARCHAR(50),
     password  VARCHAR(10),
-    categoria VARCHAR(1)
+    categoria VARCHAR(1),
+	estado    BIT -- 0: Cuenta desactivada / 1: Cuenta activada
 );
 
 CREATE TABLE analisis_muestra(
@@ -56,6 +59,9 @@ CREATE TABLE tipo_analisis(
 
 INSERT INTO tipo_analisis (id, nombre) VALUES (0, 'Detección de micotoxinas');
 INSERT INTO tipo_analisis (id, nombre) VALUES (1, 'Detección de bacterias nocivas');
+INSERT INTO tipo_analisis (id, nombre) VALUES (2, 'Detección de plaguicidas prohibidos');
+INSERT INTO tipo_analisis (id, nombre) VALUES (3, 'Detección de marea roja');
+INSERT INTO tipo_analisis (id, nombre) VALUES (4, 'Detección de bacterias nocivas');
 
 CREATE TABLE resultado_analisis(
 	id_tipo   			    INT         REFERENCES tipo_analisis(id),
