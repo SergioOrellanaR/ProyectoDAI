@@ -9,7 +9,7 @@
     $nombreContacto   = $_POST["nombreContacto"];;
     $emailContacto    = $_POST["emailContacto"];;
     $telefonoContacto = $_POST["telefonoContacto"];;
-    $empresa          = new Empresa(0, $rutEmpresa, $nombreEmpresa, $claveEmpresa, $direccionEmpresa);
+    $empresa          = new Empresa(0, $rutEmpresa, $nombreEmpresa, $claveEmpresa, $direccionEmpresa, 1);
     $empresa->ingresarEmpresaSinID();
     $idParticular = $empresa->ultimoIdRegistrado();
     $contacto = new Contacto($rutContacto, $nombreContacto, $emailContacto, $telefonoContacto, $idParticular);

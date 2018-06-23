@@ -60,7 +60,9 @@ include_once 'modelo/Muestra.php';
                 echo "ID: <input type='text' name='idParticular'><input type='submit' value='buscar' >";
                 echo "</form>";    
                 echo "<hr>";
-                echo "<a href='registroMuestra.php'>Registrar una nueva muestra</a>";
+                //if(isset($_SESSION["categoria"]) &&  ($_SESSION["categoria"] == 'R')){
+                    echo "<a href='registroMuestra.php'>Registrar una nueva muestra</a>";
+                //}
             }
             ?>
           </div>           

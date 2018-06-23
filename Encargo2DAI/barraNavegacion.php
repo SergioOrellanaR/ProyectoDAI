@@ -27,7 +27,14 @@
                             echo "<li class='nav-item'><a class='nav-link' href='contactosEmpresa.php'>Mis contactos</a></li>";
                             break;
                         case "empleado":
-                            echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php'>Manejo de muestras</a></li>";
+                            if(isset($_SESSION["categoria"]) &&  $_SESSION["categoria"] == 'A'){
+                                echo "<li class='nav-item'><a class='nav-link' href='manejadorEmpleados.php'>Manejo de empleados</a></li>";
+                                echo "<li class='nav-item'><a class='nav-link' href='manejadorEmpresas.php'>Manejo de empresas</a></li>";
+                                echo "<li class='nav-item'><a class='nav-link' href='manejadorParticulares.php'>Manejo de particulares</a></li>";
+                                echo "<li class='nav-item'><a class='nav-link' href='reportes.php'>Reportes</a></li>";                                
+                            }else{
+                                echo "<li class='nav-item'><a class='nav-link' href='manejadorMuestras.php'>Manejo de muestras</a></li>";
+                            }
                             break;
                     }
                 }

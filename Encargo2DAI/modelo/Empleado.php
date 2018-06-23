@@ -5,19 +5,21 @@ class Empleado {
     public $nombre;
     public $password;
     public $categoria;
+    public $estado;
     
-    public function __construct($rut, $nombre, $password, $categoria){
+    public function __construct($rut, $nombre, $password, $categoria, $estado){
         $this->rut       = $rut;
         $this->nombre    = $nombre;
         $this->password  = $password;
         $this->categoria = $categoria;
+        $this->estado    = $estado;
     }
     
     //Función que se utiliza, por ejemplo, para validar login.
     public function validarSesion(){
         $conexion = new Conexion();
         $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
-        $sql = "SELECT COUNT(empleado.rut) FROM empleado WHERE empleado.rut = '".$this->rut."' and empleado.password = '".$this->password."'";
+        $sql = "SELECT COUNT(empleado.rut) FROM empleado WHERE empleado.rut = '".$this->rut."' and empleado.password = '".$this->password."' and empleado.estado = 1";
         $resultado = $con->query($sql);
         $contador  = -1;
         if ($resultado->num_rows > 0) {
@@ -55,19 +57,42 @@ class Empleado {
     public function obtenerEmpleadoPorRut(){
         $conexion = new Conexion();
         $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
-        $sql = "SELECT rut, password, nombre, categoria FROM empleado WHERE rut = ". $this->rut;
+        $sql = "SELECT rut, password, nombre, categoria, estado FROM empleado WHERE rut = ". $this->rut;
         $resultado = $con->query($sql);
         if ($resultado->num_rows > 0) {
             while($row = $resultado->fetch_array()) {
-                $this->id = $row[0];
-                $this->rut = $row[1];
-                $this->password = $row[2];
-                $this->nombre = $row[3];
-                $this->direccion = $row[4];
+                $this->rut = $row[0];
+                $this->password = $row[1];
+                $this->nombre = $row[2];
+                $this->categoria = $row[3];
+                $this->estado = $row[4];
             }
         } else {
             return 0;
         }
         $con->close();      
+    }    
+    
+    //Función que obtiene lista de empleados.
+    public function obtenerListaEmpleados(){
+        //Lista que guardará objetos.
+        $listaEmpleados = [];
+        //Contador de bucle
+        $contador = 0;
+        //Query
+        $conexion = new Conexion();
+        $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
+        $sql = "SELECT rut, nombre, password, categoria, estado FROM empleado";
+        $resultado = $con->query($sql);
+        if ($resultado->num_rows > 0) {
+            while($row = $resultado->fetch_array()) {
+                $listaEmpleados[$contador] = new Empleado($row[0], $row[1], $row[2], $row[3], $row[4]);
+                $contador++;
+            }
+        } else {
+            return $listaEmpleados;
+        }
+        $con->close();
+        return $listaEmpleados;        
     }    
 }

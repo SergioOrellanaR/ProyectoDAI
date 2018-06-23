@@ -7,7 +7,7 @@
     $direccionParticular = $_POST["direccionParticular"];
     $emailParticular     = $_POST["emailParticular"];
     $telefonoParticular  = $_POST["telefonoParticular"];
-    $particular = new Particular(0, $rutParticular, $nombreParticular, $claveParticular, $direccionParticular, $emailParticular);
+    $particular = new Particular(0, $rutParticular, $nombreParticular, $claveParticular, $direccionParticular, $emailParticular, 1);
     $particular->ingresarParticularSinID();
     $idParticular = $particular->ultimoIdRegistrado();
     $telefono = new Telefono(0, $telefonoParticular, $idParticular);

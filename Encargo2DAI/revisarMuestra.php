@@ -8,7 +8,7 @@ echo $cantidad_muestras;
 if($cantidad_muestras > 0){
     header("location: muestraRevisada.php?idMuestra=".$_GET["idMuestra"]);
 }else{
-    if($_SESSION["tipo_sesion"] == "particular" || $_SESSION["tipo_sesion"] == "empresa" ){
+    if($_SESSION["tipo_sesion"] == "particular" || $_SESSION["tipo_sesion"] == "empresa" || ($_SESSION["tipo_sesion"] == "empleado" && $_SESSION["categoria"] != "T" ) ){
         header("location: muestraNoRevisada.php"); //Se envía a muestra revisada sin variables, notificar inexistencia de examen.
     }
 }

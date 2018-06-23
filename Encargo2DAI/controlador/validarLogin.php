@@ -9,7 +9,7 @@
     
     switch($tipoLogin){
         case "empresa":
-            $empresa = new Empresa(0, $usuario, '', $clave, '');
+            $empresa = new Empresa(0, $usuario, '', $clave, '', 0);
             if($empresa->validarSesion() == 1){
                 echo "Sesión validada";
                 $empresa->obtenerEmpresaPorRut();
@@ -21,7 +21,7 @@
             }            
             break;
         case "particular":
-            $particular = new Particular(0, $usuario, '', $clave, '', '');
+            $particular = new Particular(0, $usuario, '', $clave, '', '', 0);
             if($particular->validarSesion() == 1){
                 echo "Sesión validada";
                 $particular->obtenerParticularPorRut();
@@ -34,12 +34,13 @@
             break;
         case "empleado":
             $_SESSION["tipo_sesion"] = "empleado";
-            $empleado = new Empleado($usuario, '', $clave, '');
+            $empleado = new Empleado($usuario, '', $clave, '', 0);
             if($empleado->validarSesion() == 1){
                 echo "Sesión validada";
                 $empleado->obtenerEmpleadoPorRut();
                 $_SESSION["empleado_sesion_rut"] = $usuario;
-                $_SESSION["tipo_sesion"] = "empleado";                
+                $_SESSION["tipo_sesion"] = "empleado"; 
+                $_SESSION["categoria"] = $empleado->categoria;
                 header("Location: ../index.php");
             }else{
                 header("Location: ../login.php?validado=0");

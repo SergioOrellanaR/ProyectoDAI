@@ -20,7 +20,7 @@ class Pruebas extends PHPUnit_Framework_TestCase {
         include_once '../modelo/Empresa.php';
         echo "*** 2. Prueba de registro de datos ***\n";
         echo "Descripcion: Se ingresara una empresa de prueba en la BD.\n";
-        $empresa = new Empresa(0, '000EPRUEBA-0', 'EMPRESA PRUEBA', '0000','CALLE PRUEBA 000');
+        $empresa = new Empresa(0, '000EPRUEBA-0', 'EMPRESA PRUEBA', '0000','CALLE PRUEBA 000', 1);
         $empresa->ingresarEmpresaSinID();
         echo "\n";
         echo "---------------------\n";
@@ -33,7 +33,7 @@ class Pruebas extends PHPUnit_Framework_TestCase {
         echo "*** 3. Prueba de registro de datos en tabla relacionada ***\n";
         echo "Descripcion: Se ingresara un contacto de prueba en la BD.\n";
         echo "(El contacto estará asociado a la empresa anterior)\n";
-        $empresa = new Empresa(0, '', '', '','');
+        $empresa = new Empresa(0, '', '', '','', 1);
         $ultimo_id_empresa = $empresa->ultimoIdRegistrado();
         $contacto = new Contacto('000CPRUEBA-0', 'CONTACTO PRUEBA', 'prueba@prueba.pr', '000000PRU', $ultimo_id_empresa);
         $contacto->ingresarContacto();
@@ -48,7 +48,7 @@ class Pruebas extends PHPUnit_Framework_TestCase {
         include_once '../modelo/Empresa.php';        
         echo "*** 4. Prueba de eliminacion de datos en una tabla relacionada con otra. ***\n";
         echo "Descripcion: Se eliminara el contacto de prueba en la BD.\n";
-        $empresa = new Empresa(0, '', '', '','');
+        $empresa = new Empresa(0, '', '', '','', 1);
         $ultimoIdEmpresa = $empresa->ultimoIdRegistrado();
         $contacto = new Contacto('000CPRUEBA-0', '', '', '', $ultimoIdEmpresa);
         $contacto->eliminarContacto();
@@ -61,7 +61,7 @@ class Pruebas extends PHPUnit_Framework_TestCase {
         include_once '../modelo/Empresa.php';  
         echo "*** 6.1. Prueba de busqueda de datos por parameros. ***\n";
         echo "Descripcion: Se buscara la empresa con RUT 000EPRUEBA-0.\n";
-        $empresa = new Empresa(0, '000EPRUEBA-0', '', '','');
+        $empresa = new Empresa(0, '000EPRUEBA-0', '', '','', 1);
         $empresa->obtenerEmpresaPorRut();
         echo "La empresa encontrada tiene nombre ". $empresa->nombre;
         echo "\n";
@@ -73,7 +73,7 @@ class Pruebas extends PHPUnit_Framework_TestCase {
         include_once '../modelo/Empresa.php';  
         echo "*** 6.2. Prueba de busqueda de datos sin parametros. ***\n";
         echo "Descripcion: Se buscara el último ID de empresa registrada.\n";
-        $empresa = new Empresa(0, '', '', '','');
+        $empresa = new Empresa(0, '', '', '','', 1);
         $ultimo_id = $empresa->ultimoIdRegistrado();
         echo "Se obtuvo el ultimo ID de empresa registrada: ". $ultimo_id;
         echo "\n";
