@@ -1,0 +1,14 @@
+***************************************************
+*************
+************  POR HACER:
+***********
+**********    AMONONAR manejadorEmpleados.php
+*********     AMONONAR manejadorEmpresas.php
+********      AMONONAR manejadorParticulares.php
+*******
+******
+*****
+****
+***
+**
+*

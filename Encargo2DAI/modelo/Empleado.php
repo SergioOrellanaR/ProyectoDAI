@@ -94,5 +94,21 @@ class Empleado {
         }
         $con->close();
         return $listaEmpleados;        
-    }    
+    }
+
+    //Esta rutina ingresa un objeto empresa creado, ignorando el ID (que es autoincremental o autogenerado).
+    public function ingresarEmpleadoSinID(){
+        $conexion = new Conexion;
+        $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
+        $sql = "INSERT INTO empleado (rut, nombre, password, categoria, estado ) VALUES ('".$this->rut."', '".$this->nombre."','".$this->password."', '".$this->categoria."', 1)";
+        if ($con->connect_error) {
+            die("Conexión fallida: " . $con->connect_error);
+        } 
+        if ($con->query($sql) === TRUE) {
+            echo "Empleado ingresada correctamente.";
+        } else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
+        $con->close();
+    }     
 }

@@ -4,7 +4,7 @@ class Cuenta {
     public function cambiarEstado($nombre_tabla, $estado, $rut){
         $conexion = new Conexion;
         $con = new mysqli($conexion->servername, $conexion->username, $conexion->password, $conexion->dbname);
-        $sql = "UPDATE ". $nombre_tabla ." SET estado = ". $estado ." WHERE rut = ". $rut;
+        $sql = "UPDATE ". $nombre_tabla ." SET estado = ". $estado ." WHERE rut = '". $rut."'";
         if ($con->connect_error) {
             die("Conexión fallida: " . $con->connect_error);
         } 

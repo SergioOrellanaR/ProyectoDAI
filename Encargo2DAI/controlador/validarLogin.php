@@ -15,7 +15,10 @@
                 $empresa->obtenerEmpresaPorRut();
                 $_SESSION["tipo_sesion"] = "empresa";        
                 $_SESSION["empresa_sesion_id"] = $empresa->id;
-                header("Location: ../index.php");
+                if($empresa->estado == 0)
+                    header("Location: ../index.php?validado=2");
+                else
+                    header("Location: ../index.php");
             }else{
                 header("Location: ../login.php?validado=0");
             }            
@@ -27,7 +30,10 @@
                 $particular->obtenerParticularPorRut();
                 $_SESSION["particular_sesion_id"] = $particular->id;
                 $_SESSION["tipo_sesion"] = "particular";
-                header("Location: ../index.php");
+                if($particular->estado == 0)
+                    header("Location: ../index.php?validado=2");
+                else
+                    header("Location: ../index.php");
             }else{
                 header("Location: ../login.php?validado=0");
             }             

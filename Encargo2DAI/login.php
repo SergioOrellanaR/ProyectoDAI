@@ -77,7 +77,10 @@ session_start();
                   <input type="password" id="password" name="clave" class="form-control form-control-lg">
                   <?php
                   if(isset($_GET["validado"])){
-                      echo "<b>Las credenciales de acceso ingresadas no son válidas.</b>";
+                      if($_GET["validado"] == 2)
+                        echo "<b>No es posible ingresar al sistema debido a que su cuenta está desactivada.</b>";
+                      else
+                        echo "<b>Las credenciales de acceso ingresadas no son válidas.</b>";
                   }
                   ?>
                 </div>

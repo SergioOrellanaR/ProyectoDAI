@@ -8,7 +8,12 @@ include_once 'modelo/Empleado.php';
     <body>
         <h1>Manejador de empleados</h1>
         <a href="registroEmpleado.php">Registrar un empleado</a>
-        <a href="index.php">Volver</a>
+        <a href="index.php">Volver</a><br>
+        <!-- A diferencia de otros registros, si el registro de un empleado fue exitoso, el mensaje se muestra acá en el manejador, justo encima de la tabla. -->
+        <?php
+        if(isset($_GET["registrado"])) echo "<h3>El registro del empleado fue exitoso</h3>";
+        ?>
+        
         <h2>Lista de empleados</h2>
         <?php
         echo '<table>';
