@@ -7,7 +7,7 @@ CREATE TABLE empresa(
     nombre    VARCHAR(30),
     password  VARCHAR(10),
     direccion VARCHAR(50),
-	estado    BIT -- 0: Cuenta desactivada / 1: Cuenta activada
+	estado    INT -- 0: Cuenta desactivada / 1: Cuenta activada
 );
 
 CREATE TABLE particular(
@@ -17,7 +17,7 @@ CREATE TABLE particular(
     nombre	  VARCHAR(45),
     direccion VARCHAR(45),
     email     VARCHAR(100),
-	estado    BIT -- 0: Cuenta desactivada / 1: Cuenta activada
+	estado    INT -- 0: Cuenta desactivada / 1: Cuenta activada
 );
 
 CREATE TABLE empleado(
@@ -25,7 +25,7 @@ CREATE TABLE empleado(
     nombre    VARCHAR(50),
     password  VARCHAR(10),
     categoria VARCHAR(1),
-	estado    BIT -- 0: Cuenta desactivada / 1: Cuenta activada
+	estado    INT -- 0: Cuenta desactivada / 1: Cuenta activada
 );
 
 CREATE TABLE analisis_muestra(
