@@ -52,7 +52,7 @@ include_once 'modelo/Empresa.php';
            // if(isset($_GET["registrado"])) echo "<h3>El registro del empleado fue exitoso</h3>";
         ?>         
           
-        <h2>Lista de empleados</h2>
+        <h2>Lista de empresas</h2>
         <?php
         echo "<table class='table table-hover'>";
         echo '<th>Rut</th><th>Nombre</th><th>Categoria</th><th>Estado</th><th>Acciones</th>';
