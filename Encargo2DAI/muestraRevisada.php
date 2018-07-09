@@ -46,7 +46,6 @@ $resultadoAnalisis->obtenerResultadoPorIdMuestra();
             <tr><td scope="col">Tipo de análisis </td><td><?php echo $resultadoAnalisis->id_tipo ?></td></tr>
             <tr><td scope="col">Fecha de registro</td><td><?php echo $resultadoAnalisis->fecha_registro ?></td></tr>
             <tr><td scope="col">PPM</td><td><?php echo $resultadoAnalisis->ppm ?></td></tr>
-            <tr><td scope="col">Estado</td><td><?php echo $resultadoAnalisis->estado ?></td></tr>
             <tr><td scope="col">Rut del empleado analista</td><td><?php echo $resultadoAnalisis->rut_empleado_analista ?></td></tr>
         </table>
       </div>

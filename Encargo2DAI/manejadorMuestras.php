@@ -60,9 +60,9 @@ include_once 'modelo/Muestra.php';
                 echo "ID: <input type='text' name='idParticular'><input type='submit' value='buscar' >";
                 echo "</form>";    
                 echo "<hr>";
-                //if(isset($_SESSION["categoria"]) &&  ($_SESSION["categoria"] == 'R')){
+                if(isset($_SESSION["categoria"]) &&  ($_SESSION["categoria"] == 'R')){
                     echo "<a href='registroMuestra.php'>Registrar una nueva muestra</a>";
-                //}
+                }
             }
             ?>
           </div>           
@@ -124,9 +124,8 @@ include_once 'modelo/Muestra.php';
             echo "<td><a href='revisarMuestra.php?idMuestra=". $elemento->id ."'>Revisar</a></td>";
             echo "</tr>";
             echo"</tbody>";
-
         } 
-        echo "</table>";        
+        echo "</table>";
     }
 ?>
       </div>

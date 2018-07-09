@@ -36,12 +36,8 @@ include_once 'modelo/Empresa.php';
           <h1>Manejador de empresas</h1>
         </div>
     </div>
-        <a class="btn-more" href="index.php">Volver</a><br>
         
-        <a href="index.php" class="cta-link element-animate" data-animate-effect="fadeIn" data-target="#modalAppointment">
-          <span class="sub-heading"><?phpif(isset($_GET["registrado"])) echo "El registro del empleado fue exitoso"?></span>             
-          <span class="heading"><?php echo $mensaje; ?></span>
-        </a>     
+        <?php if(isset($_GET["registrado"])) echo "<a href='index.php' class='cta-link element-animate' data-animate-effect='fadeIn' data-target='#modalAppointment'><span class='sub-heading'>El registro de la empresa fue exitoso </span><span class='heading'></span></a>"?>
         
     <section class="section">
       <div class="container" >
@@ -64,7 +60,7 @@ include_once 'modelo/Empresa.php';
             echo "<td>". $elemento->nombre ."</td>";
             echo "<td>". $elemento->direccion ."</td>";
             echo "<td>". $elemento->estado ."</td>";
-            echo "<td><a href='controlador/estadoCuenta.php?tipo=empresa&estado=0&rut=". $elemento->rut ."'>Dar de baja</a>&nbsp;<a href='controlador/estadoCuenta.php?tipo=empresa&estado=1&rut=". $elemento->rut ."'>Levantar</a></td>";
+            echo "<td><a href='controlador/estadoCuenta.php?tipo=empresa&estado=0&rut=". $elemento->rut ."'>Dar de baja</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='controlador/estadoCuenta.php?tipo=empresa&estado=1&rut=". $elemento->rut ."'>Levantar</a></td>";
             echo "</tr>";
         }        
         echo '</table>';

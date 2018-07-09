@@ -75,6 +75,8 @@ if($cantidad_muestras > 0){
                 <select id="slcTipo" name="tipoAnalisis" class="form-control form-control-lg">
                     <option value="0">Detección de micotoxinas</option>
                     <option value="1">Detección de bacterias nocivas</option>
+                    <option value="2">Detección de plaguicidas prohibidos</option>
+                    <option value="3">Detección de marea roja</option>
                 </select>
                 </div>
               </div>
@@ -83,16 +85,7 @@ if($cantidad_muestras > 0){
                   <label for="txtPPM">PPM</label>
                   <input type="text" id="txtPPM" name="ppm" class="form-control form-control-lg" required>
                 </div>
-              </div> 
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="slcEstado">Estado</label>
-                <select id="slcTipo" name="estado" class="form-control form-control-lg">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                </select>
-                </div>
-              </div>                
+              </div>               
               <div class="row">
                 <div class="col-md-3 form-group">
                   <input type="submit" value="Ingresar" ID="btnSend" class="btn btn-primary btn-lg btn-block">

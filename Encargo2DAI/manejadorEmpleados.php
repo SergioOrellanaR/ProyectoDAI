@@ -37,20 +37,18 @@ include_once 'modelo/Empleado.php';
           <h1>Manejador de empleados</h1>
         </div>
     </div>
-
-        <a class="btn-more" href="registroEmpleado.php">Registrar un empleado</a>
-        <a class="btn-more" href="index.php">Volver</a><br>
-        
-        <a href="index.php" class="cta-link element-animate" data-animate-effect="fadeIn" data-target="#modalAppointment">
-          <span class="sub-heading"><?phpif(isset($_GET["registrado"])) echo "El registro del empleado fue exitoso"?></span>             
-          <span class="heading"><?php echo $mensaje; ?></span>
-        </a>     
+    
+        <?php if(isset($_GET["registrado"])) echo "<a href='index.php' class='cta-link element-animate' data-animate-effect='fadeIn' data-target='#modalAppointment'><span class='sub-heading'>El registro del empleado fue exitoso </span><span class='heading'></span></a>"?>     
         
     <section class="section">
       <div class="container" >
+          <a class="btn-more" href="registroEmpleado.php">Registrar un empleado</a>
         <?php
            // if(isset($_GET["registrado"])) echo "<h3>El registro del empleado fue exitoso</h3>";
         ?>         
+        <div class="alert alert-primary" role="alert">
+        Bienvenido, acá puedes administrar las cuentas de particulares y cambiar su estado.
+        </div> 
           
         <h2>Lista de empleados</h2>
         <?php
@@ -64,7 +62,7 @@ include_once 'modelo/Empleado.php';
             echo "<td>". $elemento->nombre ."</td>";
             echo "<td>". $elemento->categoria ."</td>";
             echo "<td>". $elemento->estado ."</td>";
-            echo "<td><a href='controlador/estadoCuenta.php?tipo=empleado&estado=0&rut=". $elemento->rut ."'>Dar de baja</a>&nbsp;<a href='controlador/estadoCuenta.php?tipo=empleado&estado=1&rut=". $elemento->rut ."'>Levantar</a></td>";
+            echo "<td><a href='controlador/estadoCuenta.php?tipo=empleado&estado=0&rut=". $elemento->rut ."'>Dar de baja</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='controlador/estadoCuenta.php?tipo=empleado&estado=1&rut=". $elemento->rut ."'>Levantar</a></td>";
             echo "</tr>";
         }        
         echo '</table>';

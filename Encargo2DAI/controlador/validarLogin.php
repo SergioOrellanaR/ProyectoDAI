@@ -47,6 +47,7 @@
                 $_SESSION["empleado_sesion_rut"] = $usuario;
                 $_SESSION["tipo_sesion"] = "empleado"; 
                 $_SESSION["categoria"] = $empleado->categoria;
+                echo $_SESSION["categoria"];
                 header("Location: ../index.php");
             }else{
                 header("Location: ../login.php?validado=0");
